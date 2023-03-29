@@ -1,0 +1,355 @@
+@use "./var";
+
+div.Administracion {
+    padding: 0 0 3vw 0;
+    section.adminHeader {
+        @include var.flex-container(row,space-between,center);
+        padding: 0 3vw;
+        height: 8vh;
+        background-color: var.$grisClaro;
+        color: white;
+        h2 {
+            font-size: 1.5rem;
+        }
+        i {
+            color: white;
+            font-size: 2.5rem;
+        }
+    }
+    h1 {
+        font-size: 1.75rem;
+        color: var.$grisClaro;
+        padding: 3vh 3vw;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        margin: 0 3vw;
+        border-radius: 10px;
+        padding: 2.5vh;
+        box-shadow: 0px 4px 4px 0px #00000040;
+        div.basicData {
+            @include var.flex-container(row,center,center);
+            flex-wrap: wrap;
+            section {
+                @include var.flex-container(column,center,left);
+                width: 50%;
+                padding: 1vh;
+                label {
+                    text-align: left;
+                    color: var.$grisClaro;
+                    padding: 0 0 1vh 0;
+                    font-weight: bold;
+                }
+                input, select {
+                    width: 100%;
+                    height: 6vh;
+                    border: 1px solid grey;
+                    background-color: white;
+                    padding: 1.5vh;
+                    border-radius: 5px;
+                    &:disabled {
+                        background-color: var.$grisBlanco;
+                    }
+                }
+                textarea {
+                    padding: 1.5vh;
+                    border-radius: 5px;
+                    border: 1px solid grey;
+                    resize: none;
+                }
+                &.descripcion {
+                    width: 100%;
+                }
+            }
+        }
+        div.atributos, div.politicas, div.imagenes {
+            padding: 1vh;
+        }
+        div.atributos {
+            section.atributosCheck {
+                @include var.flex-container(row,left,baseline);
+                flex-wrap: wrap;
+                div {
+                    @include var.flex-container(row,left,baseline);
+                    gap: 0.5vw;
+                    width: 20%;
+                    padding: 1vh 0 1vh;
+                    margin: 1vh 0 1vh;
+                    i {
+                        color: var.$naranja;
+                    }
+                }
+            }
+        }
+        div.politicas {
+            @include var.flex-container(column,left,flex-start);
+            section.containerPolit {
+                @include var.flex-container(row,space-between,flex-start);
+                padding: 1.5vh 0;
+                width: 100%;
+                article {
+                    width: 33%;
+                    border-radius: 5px;
+                    padding: 1vh;
+                    background-color: var.$grisBlanco;
+                    h3 {
+                        padding: 1.5vh 0;
+                        color: var.$grisClaro;
+                    }
+                    div {
+                        @include var.flex-container(row,space-between,center);
+                        input {
+                            width: 89%;
+                            height: 6vh;
+                            border: 1px solid grey;
+                            background-color: white;
+                            padding: 1.5vh;
+                            border-radius: 5px;
+                        }
+                        button {
+                            width: 10%;
+                            height: 6vh;
+                            border: none;
+                            border-radius: 5px;
+                            width: 6vh;
+                            background-color: var.$naranja;
+                            color: white;
+                            cursor: pointer;
+                            &:hover {
+                                opacity: 0.8;
+                            }
+                        }
+                    }
+                    ul {
+                        padding: 2vh;
+                        li {
+                            margin-left: 1vw;
+                            color: var.$grisOscuro;
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+        div.imagenes {
+            section.addImagenesInput {
+                @include var.flex-container(row,left,flex-end);
+                padding: 1.5vh 0;
+                gap: 1vw;
+                div {
+                    @include var.flex-container(column,left,flex-start);
+                    width: 46%;
+                    label {
+                        color: var.$grisClaro;
+                        padding: 0 0 1vh 0;
+                        font-weight: bold;
+                    }
+                    input {
+                        width: 100%;
+                        height: 6vh;
+                        border: 1px solid grey;
+                        background-color: white;
+                        padding: 1.5vh;
+                        border-radius: 5px;
+                    }
+                }
+                button {
+                    height: 6vh;
+                    width: 6vh;
+                    border: none;
+                    background-color: var.$naranja;
+                    color: white;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+            }
+            section.addedImgs {
+                @include var.flex-container(row,left,baseline);
+                flex-wrap: wrap;
+                gap: 1vh;
+                article {
+                    @include var.flex-container(column,left,center);
+                    width: 24%;
+                    height: 30vh;
+                    margin: 1vh 0;
+                    background-color: var.$grisBlanco;
+                    border-radius: 5px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: inherit;
+                    }
+                    div {
+                        @include var.flex-container(row,space-between,center);
+                        width: 100%;
+                        padding: 1vh;
+                        h4 {
+                            color: var.$grisClaro;
+                        }
+                        i {
+                            cursor: pointer;
+                            padding: 1vh;
+                            background-color: var.$naranja;
+                            color: white;
+                            border-radius: 5px;
+                        }
+                    }
+                }
+            }
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: var.$grisClaro;
+        }
+        button[type='submit'] {
+            width: 30%;
+            background-color: var.$naranja;
+            text-decoration: none;
+            text-align: center;
+            border: none;
+            color: white;
+            align-self: center;
+            border-radius: 5px;
+            padding: 1.5vh 0;
+            height: 8vh;
+            cursor: pointer;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) { 
+    div.Administracion {
+        form {
+            div.basicData {
+                flex-direction: column;
+                section {
+                    width: 100%;
+                }
+            }
+            div.atributos {
+                section.atributosCheck {
+                    justify-content: space-between;
+                    div {
+                        width: 50%;
+                        gap: 1.5vw;
+                    }
+                }
+            }
+            div.politicas {
+                section.containerPolit {
+                    flex-direction: column;
+                    article {
+                        margin: 1.5vh 0;
+                        width: 100%;
+                        div {
+                            input {
+                                height: 4vh;
+                            }
+                            button {
+                                height: 4vh;
+                                width: 4vh;
+                            }
+                        }
+                    }
+                }
+            }
+            div.imagenes {
+                section.addImagenesInput {
+                    flex-direction: column;
+                    div {
+                        width: 100%;
+                    }
+                    button {
+                        height: 6vh;
+                        width: 100%;
+                    }
+                }
+                section.addedImgs {
+                    flex-direction: column;
+                    article {
+                        width: 100%;
+                    }
+                }
+            }
+            button[type='submit'] {
+                width: 100%;
+                height: 6vh;
+            }
+        }
+    }
+}
+
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+    div.Administracion {
+        form {
+            div.basicData {
+                section {
+                    input, select {
+                        height: 4vh;
+                        padding: 0.5vh 1.5vh;
+                    }
+                }
+            }
+            div.atributos {
+                section.atributosCheck {
+                    justify-content: space-between;
+                    div {
+                        width: 30%;
+                    }
+                }
+            }
+            div.politicas {
+                section.containerPolit {
+                    flex-direction: column;
+                    article {
+                        margin: 1.5vh 0;
+                        width: 100%;
+                        div {
+                            input {
+                                height: 4vh;
+                            }
+                            button {
+                                height: 4vh;
+                                width: 6vh;
+                            }
+                        }
+                    }
+                }
+            }
+            div.imagenes {
+                section.addImagenesInput {
+                    div {
+                        input {
+                            height: 4vh;
+                        }
+                    }
+                    button {
+                        height: 4vh;
+                        width: 4vh;
+                    }
+                }
+                section.addedImgs {
+                    article {
+                        width: 49%;
+                        height: 18vh;
+                    }
+                }
+            }
+            button[type='submit'] {
+                width: 50%;
+                height: 5vh;
+            }
+        }
+    }
+}
